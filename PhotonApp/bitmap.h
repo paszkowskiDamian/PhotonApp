@@ -5,11 +5,11 @@
 class bitmap :
 	public image
 {
-	bmpHeaders* headers;
+	bmpHeaders *headers;
 
 public:
 	bitmap();
-	void load();
+	void load(std::string filename);
 	void save();
 	virtual ~bitmap();
 };
