@@ -2,15 +2,15 @@
 #include "image.h"
 #include "bmpHeaders.h"
 
-class bitmap :
-	public image
+class bitmap //:
+	//public image
 {
 	bmpHeaders *headers;
 
 public:
 	bitmap();
 	void load(std::string filename);
-	void save();
+	//void save();
 	virtual ~bitmap();
 };
 

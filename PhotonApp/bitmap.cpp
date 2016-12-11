@@ -9,10 +9,9 @@ bitmap::bitmap()
 
 void bitmap::load(std::string filename)
 {
-	std::ifstream bitMap;
-	bitMap.open(filename, 'wb');
+	std::ifstream bitMap(filename, std::ios::in | std::ios::binary | std::ios::ate);
 
-	if (!bitMap) throw "DODAJ EXCEPTIONY!";
+	if (!bitMap.is_open()) throw "DODAJ EXCEPTIONY!";
 
 	bitMap >> *headers;
 
