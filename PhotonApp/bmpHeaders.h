@@ -1,6 +1,7 @@
 #pragma once
 #include <ostream>
 #include <iostream>
+#include <vector>
 
 class bmpHeaders
 {
@@ -9,11 +10,11 @@ class bmpHeaders
 
 public:
 	friend std::ostream& operator<< (std::ostream &out, const bmpHeaders &headers);
-	friend std::istream& operator >> (std::istream &in, bmpHeaders &headers);
+	//friend std::istream& operator >> (std::istream &in, bmpHeaders &headers);
 
 	void setHeaders(int w, int h);
+	void setHeaders(std::vector<char>);
 
-	bmpHeaders(int,int);
 	bmpHeaders();
 	~bmpHeaders();
 };

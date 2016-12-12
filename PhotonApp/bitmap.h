@@ -1,16 +1,18 @@
 #pragma once
 #include "image.h"
 #include "bmpHeaders.h"
+#include <fstream>
+#include <vector>
 
-class bitmap //:
-	//public image
+class bitmap :
+	public image
 {
-	bmpHeaders *headers;
+	bmpHeaders *_headers;
 
 public:
-	bitmap();
-	void load(std::string filename);
+	bitmap(std::string filename);
+	//bitmap(int,int); //create new image
 	//void save();
-	virtual ~bitmap();
+	~bitmap();
 };
 

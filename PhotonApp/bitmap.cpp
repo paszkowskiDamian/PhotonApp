@@ -2,21 +2,15 @@
 
 
 
-bitmap::bitmap()
+bitmap::bitmap(std::string filename) : image(filename)
 {
-	headers = new bmpHeaders;
+	_headers = new bmpHeaders;
+	auto fileContent = _fileContent();
+	
+	
+
 }
 
-void bitmap::load(std::string filename)
-{
-	std::ifstream bitMap(filename, std::ios::in | std::ios::binary | std::ios::ate);
-
-	if (!bitMap.is_open()) throw "DODAJ EXCEPTIONY!";
-
-	bitMap >> *headers;
-
-	bitMap.close();
-}
 
 bitmap::~bitmap()
 {

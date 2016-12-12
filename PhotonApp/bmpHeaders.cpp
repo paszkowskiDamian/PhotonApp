@@ -1,6 +1,14 @@
 #include "bmpHeaders.h"
 
+bmpHeaders::bmpHeaders()
+{
+}
 
+bmpHeaders::~bmpHeaders()
+{
+}
+
+/*
 void bmpHeaders::setHeaders(int width, int height)
 {
 	auto fileSize = 54 + 3 * width * height;
@@ -11,19 +19,19 @@ void bmpHeaders::setHeaders(int width, int height)
 		_bmpInfoHeader[8 + i] = static_cast<unsigned char>(height >> i * 8);
 	}
 }
+*/
 
-bmpHeaders::bmpHeaders(int width, int height)
+void bmpHeaders::setHeaders(std::vector<char> file)
 {
-	setHeaders(width, height);
-}
+	for(auto i = 0; i < 14 ; i++)
+	{
+		_bmpFileHeader[i] = file[i];
+	}
+	for(auto i = 0 ; i < 40 ; i++)
+	{
+		_bmpInfoHeader[i] = file[i];
+	}
 
-bmpHeaders::bmpHeaders()
-{
-}
-
-
-bmpHeaders::~bmpHeaders()
-{
 }
 
 std::ostream& operator<<(std::ostream& out, const bmpHeaders& headers)
@@ -33,16 +41,16 @@ std::ostream& operator<<(std::ostream& out, const bmpHeaders& headers)
 	return out;
 }
 
-std::istream& operator>>(std::istream& in, bmpHeaders& headers)
-{
-	char fileBuffer[14];
-	char infoBuffer[40];
-
-	in.read(fileBuffer,14);
-	in.read(infoBuffer, 40);
-
-	*headers._bmpFileHeader = *fileBuffer;
-	*headers._bmpInfoHeader = *infoBuffer;
-
-	return in;
-}
+//std::istream& operator>>(std::istream& in, bmpHeaders& headers)
+//{
+//	char fileBuffer[14];
+//	char infoBuffer[40];
+//
+//	in.read(fileBuffer,14);
+//	in.read(infoBuffer, 40);
+//
+//	*headers._bmpFileHeader = *fileBuffer;
+//	*headers._bmpInfoHeader = *infoBuffer;
+//
+//	return in;
+//}
