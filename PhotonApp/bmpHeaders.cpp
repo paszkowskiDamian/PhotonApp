@@ -2,12 +2,10 @@
 
 bmpHeaders::bmpHeaders()
 {
-
 }
 
 bmpHeaders::bmpHeaders(std::vector<char> file)
 {
-
 	setHeaders(file);
 }
 

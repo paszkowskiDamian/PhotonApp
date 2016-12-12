@@ -27,6 +27,12 @@
     <ClCompile Include="bmpHeaders.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="pixel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pixelMatrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="image.h">
@@ -36,6 +42,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="bmpHeaders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pixel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pixelMatrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
