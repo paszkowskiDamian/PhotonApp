@@ -1,15 +1,15 @@
 #pragma once
 #include <fstream>
 #include <vector>
+#include "pixelMatrix.h"
 
 class image
 {
 	std::string _filename;
-	int _width = 0;
-	int _height = 0;
 
 protected:
 	std::vector<char> _fileContent() const;
+	pixelMatrix* _pixels;
 
 public:
 	image(std::string);
