@@ -9,6 +9,7 @@ int main(int argc, char* argv[])
 {
 	bitmap image("img.bmp");
 
+
 	/*vector<char> fileContents;
 	
 
