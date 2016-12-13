@@ -8,5 +8,10 @@ class pixel
 public:
 	pixel(int, int, int);
 	~pixel();
+
+	unsigned char getRed() const;
+	unsigned char getGreen() const;
+	unsigned char getBlue() const;
+
 };
 

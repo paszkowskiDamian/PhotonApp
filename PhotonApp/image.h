@@ -9,12 +9,11 @@ class image
 
 protected:
 	std::vector<char> _fileContent() const;
-	pixelMatrix* _pixels;
 
 public:
 	image(std::string);
 	//virtual void load() = 0;
-	//virtual void save() = 0;
+	virtual void save(std::string) = 0;
 	virtual ~image();
 };
 

@@ -10,6 +10,7 @@ class bmpHeaders
 	int _width = 0;
 	int _height = 0;
 	int _fileSize = 0;
+
 public:
 	bmpHeaders();
 	bmpHeaders(std::vector<char>);

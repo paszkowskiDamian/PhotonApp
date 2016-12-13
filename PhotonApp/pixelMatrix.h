@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
+#include <iostream>
 #include "pixel.h"
+
 
 class pixelMatrix
 {
@@ -11,6 +13,8 @@ public:
 	~pixelMatrix();
 
 	void setPixels(std::vector<char> file);
+
+	friend std::ostream& operator<< (std::ostream &out, const pixelMatrix &table);
 
 };
 

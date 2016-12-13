@@ -5,7 +5,7 @@ std::vector<char> image::_fileContent() const
 {
 	std::vector<char> fileContent;
 
-	std::ifstream file(_filename, std::ios::out | std::ios::binary | std::ios::ate);
+	std::ifstream file(_filename, std::ios::in | std::ios::binary | std::ios::ate);
 
 	if (!file.is_open())
 		throw std::runtime_error("Opening file error");

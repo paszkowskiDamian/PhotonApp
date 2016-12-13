@@ -8,11 +8,12 @@ class bitmap :
 	public image
 {
 	bmpHeaders *_headers;
+	pixelMatrix* _pixels;
 
 public:
 	bitmap(std::string filename);
 	//bitmap(int,int); //create new image
-	//void save();
+	void save(std::string);
 	~bitmap();
 };
 
