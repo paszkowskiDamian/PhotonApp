@@ -13,10 +13,10 @@ class bmpHeaders
 
 public:
 	bmpHeaders();
-	bmpHeaders(std::vector<char>);
+	bmpHeaders(std::vector<unsigned char>);
 	~bmpHeaders();
 
-	void setHeaders(std::vector<char>);
+	void setHeaders(std::vector<unsigned char>);
 	int getWidth() const;
 	int getHeight() const;
 	int getfileSize() const;

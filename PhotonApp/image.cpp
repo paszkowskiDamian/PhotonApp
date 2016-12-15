@@ -1,9 +1,10 @@
 #include "image.h"
 
 
-std::vector<char> image::_fileContent() const
+std::vector<unsigned char> image::fileContent() const
 {
 	std::vector<char> fileContent;
+	std::vector<unsigned char> unsignedFileContent;
 
 	std::ifstream file(_filename, std::ios::in | std::ios::binary | std::ios::ate);
 
@@ -16,7 +17,12 @@ std::vector<char> image::_fileContent() const
 	if (!file.read(&fileContent[0], fileContent.size()))
 		throw std::runtime_error("Reading file error");
 
-	return fileContent;
+	for(auto i = 0; i < fileContent.size() ; i ++)
+	{
+		unsignedFileContent[i] = static_cast<unsigned char>(fileContent[i]);
+	}
+
+	return unsignedFileContent;
 }
 
 image::image(std::string filename) : _filename(filename)

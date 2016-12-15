@@ -4,7 +4,7 @@ bmpHeaders::bmpHeaders()
 {
 }
 
-bmpHeaders::bmpHeaders(std::vector<char> file)
+bmpHeaders::bmpHeaders(std::vector<unsigned char> file)
 {
 	setHeaders(file);
 }
@@ -13,7 +13,7 @@ bmpHeaders::~bmpHeaders()
 {
 }
 
-void bmpHeaders::setHeaders(std::vector<char> file)
+void bmpHeaders::setHeaders(std::vector<unsigned char> file)
 {
 	for(auto i = 0; i < 14 ; i++)
 	{
@@ -25,9 +25,9 @@ void bmpHeaders::setHeaders(std::vector<char> file)
 	}
 	for(auto i = 0; i < 4 ; i++)
 	{
-	_fileSize += static_cast<unsigned char>(_bmpFileHeader[2+i]) << i * 8;
-	_width += static_cast<unsigned  char>(_bmpInfoHeader[4+i]) << i * 8;
-	_height += static_cast<unsigned char>(_bmpInfoHeader[8+i]) << i * 8;
+		_fileSize += static_cast<int>(_bmpFileHeader[2+i]) << i * 8;
+		_width += static_cast<int>(_bmpInfoHeader[4+i]) << i * 8;
+		_height += static_cast<int>(_bmpInfoHeader[8+i]) << i * 8;
 	}
 }
 

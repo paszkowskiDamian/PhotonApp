@@ -8,7 +8,7 @@ class image
 	std::string _filename;
 
 protected:
-	std::vector<char> _fileContent() const;
+	std::vector<unsigned char> fileContent() const;
 
 public:
 	image(std::string);
