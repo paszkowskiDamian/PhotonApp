@@ -18,7 +18,7 @@ void bitmap::save(std::string fileName)
 		throw std::runtime_error("save file open error");
 
 	saveFile << _headers;
-	saveFile << _pixels;
+	saveFile << *_pixels;
 }
 
 bitmap::~bitmap()

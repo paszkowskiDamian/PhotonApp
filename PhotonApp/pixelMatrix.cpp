@@ -28,7 +28,7 @@ void pixelMatrix::setPixels(std::vector<char> file)
 	int height = _pixelTable.size();
 	int width = _pixelTable[0].size();
 	auto fillBits = (4-width % 4) % 4; 
-	auto index = 56; // pixel data starts at 55 bit
+	auto index = 54; // pixel data starts at 55 bit
 
 	for(auto row = 0; row < height; row++)
 	{
@@ -40,18 +40,19 @@ void pixelMatrix::setPixels(std::vector<char> file)
 	}
 }
 
+
 std::ostream& operator<<(std::ostream& out, const pixelMatrix& table)
 {
-	int height = table._pixelTable.size();
-	int width = table._pixelTable[0].size();
+	auto height = table._pixelTable.size();
+	auto width = table._pixelTable[0].size();
 	auto fillBits = (4 - width % 4) % 4;
 	for (auto row = 0; row < height; row++)
 	{
 		for (auto col = 0; col < width; col++)
 		{
-			out << table._pixelTable[row][col]->getRed();
-			out << table._pixelTable[row][col]->getGreen();
-			out << table._pixelTable[row][col]->getBlue();
+			out << static_cast<unsigned char>(table._pixelTable[row][col]->getRed());
+			out << static_cast<unsigned char>(table._pixelTable[row][col]->getGreen());
+			out << static_cast<unsigned char>(table._pixelTable[row][col]->getBlue());
 		}
 		for (auto addBits = 0; addBits < fillBits; addBits++)
 			out << 0;
