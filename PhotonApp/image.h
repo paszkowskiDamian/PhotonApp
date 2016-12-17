@@ -9,6 +9,7 @@ class image
 
 protected:
 	std::vector<unsigned char> fileContent() const;
+	std::vector<unsigned char> _fileContent;
 
 public:
 	image(std::string);

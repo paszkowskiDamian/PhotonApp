@@ -11,7 +11,10 @@ std::vector<unsigned char> image::fileContent() const
 	if (!file.is_open())
 		throw std::runtime_error("Opening file error");
 
-	fileContent.resize(file.tellg());
+	int filesize = file.tellg();
+	fileContent.resize(filesize);
+	unsignedFileContent.resize(filesize);
+
 	file.seekg(0, std::ios::beg);
 
 	if (!file.read(&fileContent[0], fileContent.size()))
@@ -27,6 +30,7 @@ std::vector<unsigned char> image::fileContent() const
 
 image::image(std::string filename) : _filename(filename)
 {
+	_fileContent = fileContent();
 }
 
 

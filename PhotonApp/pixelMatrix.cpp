@@ -23,7 +23,7 @@ pixelMatrix::~pixelMatrix()
 	}
 }
 
-void pixelMatrix::setPixels(std::vector<char> file)
+void pixelMatrix::setPixels(std::vector<unsigned char> file)
 {
 	int height = _pixelTable.size();
 	int width = _pixelTable[0].size();
