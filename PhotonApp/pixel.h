@@ -13,5 +13,6 @@ public:
 	int getGreen() const;
 	int getBlue() const;
 
+	void setPixel(int,int,int);
 };
 

@@ -19,9 +19,9 @@ void bmpHeaders::setHeaders(std::vector<char> file)
 	{
 		_bmpFileHeader[i] = file[i];
 	}
-	for(auto i = 14 ; i < 40 ; i++)
+	for(auto i = 0 ; i < 40 ; i++)
 	{
-		_bmpInfoHeader[i] = file[i];
+		_bmpInfoHeader[i] = file[ i + 14];
 	}
 	for(auto i = 0; i < 4 ; i++)
 	{
@@ -48,8 +48,14 @@ int bmpHeaders::getfileSize() const
 
 std::ostream& operator<<(std::ostream& out, const bmpHeaders& headers)
 {
-	out << headers._bmpFileHeader;
-	out << headers._bmpInfoHeader;
+	for (auto bit : headers._bmpFileHeader)
+	{
+		out << bit;
+	}
+	for (auto bit : headers._bmpInfoHeader)
+	{
+		out << bit;
+	}
 	return out;
 }
 

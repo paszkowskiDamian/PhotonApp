@@ -3,9 +3,7 @@
 
 pixel::pixel(int red, int green, int blue)
 {
-	red > 255 ? _red = 255 : _red = red;
-	green > 255 ? _green = 255 : _green = green;
-	blue > 255 ? _blue = 255 : _blue = blue;
+	setPixel(red, green, blue);
 }
 
 pixel::~pixel()
@@ -14,15 +12,22 @@ pixel::~pixel()
 
 int pixel::getRed() const
 {
-	return static_cast<int>(_red);
+	return _red;
 }
 
 int pixel::getGreen() const
 {
-	return static_cast<int>(_green);
+	return _green;
 }
 
 int pixel::getBlue() const
 {
-	return static_cast<int>(_blue);
+	return _blue;
+}
+
+void pixel::setPixel(int red, int green, int blue)
+{
+	red > 255 ? _red = 255 : _red = red;
+	green > 255 ? _green = 255 : _green = green;
+	blue > 255 ? _blue = 255 : _blue = blue;
 }

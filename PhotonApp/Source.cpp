@@ -53,21 +53,10 @@ int main(int argc, char* argv[])
 
 	//		for(auto i = 55 ; i < content.size() ; i++)
 	//		{
-	//			int add = 0;
-
-	//			switch ((i-54)%3)
-	//			{
-	//			case 1:
-	//				add = 0;
-	//				break;
-	//			default:
-	//				add = -255;
-	//			}
-
-	//			int val = static_cast<int>(content[i]) + add;
+	//			int val = static_cast<int>(content[i]);
 	//			val > 255 ? val = 255 : val = val;
 	//			val < 0 ? val = 0 : val = val;
-	//			copy << static_cast<unsigned char>(val);
+	//			copy << static_cast<char>(val);
 	//		}
 	//		copy.close();
 	//	}
