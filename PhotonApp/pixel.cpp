@@ -12,17 +12,17 @@ pixel::~pixel()
 {
 }
 
-unsigned char pixel::getRed() const
+int pixel::getRed() const
 {
-	return static_cast<unsigned char>(_red);
+	return static_cast<int>(_red);
 }
 
-unsigned char pixel::getGreen() const
+int pixel::getGreen() const
 {
-	return static_cast<unsigned char>(_green);
+	return static_cast<int>(_green);
 }
 
-unsigned char pixel::getBlue() const
+int pixel::getBlue() const
 {
-	return static_cast<unsigned char>(_blue);
+	return static_cast<int>(_blue);
 }

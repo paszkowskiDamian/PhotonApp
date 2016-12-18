@@ -4,7 +4,7 @@ bmpHeaders::bmpHeaders()
 {
 }
 
-bmpHeaders::bmpHeaders(std::vector<unsigned char> file)
+bmpHeaders::bmpHeaders(std::vector<char> file)
 {
 	setHeaders(file);
 }
@@ -13,15 +13,15 @@ bmpHeaders::~bmpHeaders()
 {
 }
 
-void bmpHeaders::setHeaders(std::vector<unsigned char> file)
+void bmpHeaders::setHeaders(std::vector<char> file)
 {
 	for(auto i = 0; i < 14 ; i++)
 	{
 		_bmpFileHeader[i] = file[i];
 	}
-	for(auto i = 0 ; i < 40 ; i++)
+	for(auto i = 14 ; i < 40 ; i++)
 	{
-		_bmpInfoHeader[i] = file[i+14];
+		_bmpInfoHeader[i] = file[i];
 	}
 	for(auto i = 0; i < 4 ; i++)
 	{

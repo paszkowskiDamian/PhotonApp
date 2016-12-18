@@ -23,12 +23,12 @@ pixelMatrix::~pixelMatrix()
 	}
 }
 
-void pixelMatrix::setPixels(std::vector<unsigned char> file)
+void pixelMatrix::setPixels(std::vector<char> file)
 {
 	int height = _pixelTable.size();
 	int width = _pixelTable[0].size();
 	auto fillBits = (4-width % 4) % 4; 
-	auto index = 54; // pixel data starts at 55 bit
+	auto index = 55; // pixel data starts at 56 bit
 
 	for(auto row = 0; row < height; row++)
 	{

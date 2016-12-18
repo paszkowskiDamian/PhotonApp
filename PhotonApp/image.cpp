@@ -1,10 +1,10 @@
 #include "image.h"
 
 
-std::vector<unsigned char> image::fileContent() const
+void image::getContent()
 {
 	std::vector<char> fileContent;
-	std::vector<unsigned char> unsignedFileContent;
+	char bit = 0;
 
 	std::ifstream file(_filename, std::ios::in | std::ios::binary | std::ios::ate);
 
@@ -13,24 +13,21 @@ std::vector<unsigned char> image::fileContent() const
 
 	int filesize = file.tellg();
 	fileContent.resize(filesize);
-	unsignedFileContent.resize(filesize);
 
 	file.seekg(0, std::ios::beg);
 
-	if (!file.read(&fileContent[0], fileContent.size()))
-		throw std::runtime_error("Reading file error");
-
-	for(auto i = 0; i < fileContent.size() ; i ++)
+	auto i = 0;
+	while (file.get(bit))
 	{
-		unsignedFileContent[i] = static_cast<unsigned char>(fileContent[i]);
+		fileContent[i++] = bit;
 	}
 
-	return unsignedFileContent;
+	_fileContent = fileContent;
 }
 
 image::image(std::string filename) : _filename(filename)
 {
-	_fileContent = fileContent();
+	getContent();
 }
 
 

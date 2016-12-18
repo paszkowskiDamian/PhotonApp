@@ -7,13 +7,13 @@ class image
 {
 	std::string _filename;
 
+	void getContent();
+
 protected:
-	std::vector<unsigned char> fileContent() const;
-	std::vector<unsigned char> _fileContent;
+	std::vector<char> _fileContent;
 
 public:
 	image(std::string);
-	//virtual void load() = 0;
 	virtual void save(std::string) = 0;
 	virtual ~image();
 };

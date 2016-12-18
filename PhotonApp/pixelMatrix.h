@@ -12,7 +12,7 @@ public:
 	pixelMatrix(int,int);
 	~pixelMatrix();
 
-	void setPixels(std::vector<unsigned char> file);
+	void setPixels(std::vector<char> file);
 
 	friend std::ostream& operator<< (std::ostream &out, const pixelMatrix &table);
 
