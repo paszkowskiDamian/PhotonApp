@@ -17,12 +17,12 @@ void bitmap::save(std::string fileName)
 	if (!saveFile.is_open())
 		throw std::runtime_error("save file open error");
 
-	saveFile << *_headers;
+	//saveFile << *_headers;
 	
-	/*for (auto i = 0; i < 55; i++)
+	for (auto i = 0; i < 55; i++)
 	{
 		saveFile << _fileContent[i];
-	}*/
+	}
 	//saveFile << *_pixels;
 	for (auto i = 55 ; i < _fileContent.size() ; i++)
 	{

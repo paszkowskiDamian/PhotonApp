@@ -10,9 +10,9 @@ int main(int argc, char* argv[])
 {
 	try
 	{
-		bitmap image("img.bmp");
+		bitmap image("C:\\Users\\damia\\OneDrive\\Makro II\\CP\\Projects\\bitmap\\bitmap\\img.bmp");
 
-		image.save("new.bmp");
+		image.save("C:\\Users\\damia\\Desktop\\new.bmp");
 
 	}
 	catch(exception& e)
