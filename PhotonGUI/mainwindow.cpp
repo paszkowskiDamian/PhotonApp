@@ -2,7 +2,8 @@
 #include "ui_mainwindow.h"
 #include <QFileDialog>
 #include <QMessageBox>
-
+#include <tooldockwidget.h>
+#include <imagepreview.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -26,6 +27,8 @@ void MainWindow::on_actionOpen_triggered()
         bitmap bmp(native.toStdString());
         _image = &bmp;
         ui->actionSave->setEnabled(true);
+        imagePreview *frame = new imagePreview(this);
+        frame->show();
     }
 
 }
@@ -46,4 +49,11 @@ void MainWindow::on_actionSave_triggered()
             _image->save(native.toStdString());
         }
     }
+}
+
+void MainWindow::on_actionBrightness_triggered()
+{
+    toolDockWidget *brightness = new toolDockWidget("Brightness",this);
+    brightness->setAllowedAreas(Qt::RightDockWidgetArea);
+    addDockWidget(Qt::RightDockWidgetArea,brightness);
 }

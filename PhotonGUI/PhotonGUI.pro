@@ -18,13 +18,19 @@ SOURCES += main.cpp\
     ../PhotonApp/PhotonApp/bmpHeaders.cpp \
     ../PhotonApp/PhotonApp/image.cpp \
     ../PhotonApp/PhotonApp/pixel.cpp \
-    ../PhotonApp/PhotonApp/pixelMatrix.cpp
+    ../PhotonApp/PhotonApp/pixelMatrix.cpp \
+    tooldockwidget.cpp \
+    imagepreview.cpp
 
 HEADERS  += mainwindow.h \
     ../PhotonApp/PhotonApp/bitmap.h \
     ../PhotonApp/PhotonApp/bmpHeaders.h \
     ../PhotonApp/PhotonApp/image.h \
     ../PhotonApp/PhotonApp/pixel.h \
-    ../PhotonApp/PhotonApp/pixelMatrix.h
+    ../PhotonApp/PhotonApp/pixelMatrix.h \
+    tooldockwidget.h \
+    imagepreview.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    tooldockwidget.ui \
+    imagepreview.ui
