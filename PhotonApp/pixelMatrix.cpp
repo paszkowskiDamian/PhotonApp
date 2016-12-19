@@ -50,9 +50,9 @@ std::ostream& operator<<(std::ostream& out, const pixelMatrix& table)
 	{
 		for (auto col = 0; col < width; col++)
 		{
-			out << static_cast<unsigned char>(table._pixelTable[row][col]->getRed());
-			out << static_cast<unsigned char>(table._pixelTable[row][col]->getGreen());
-			out << static_cast<unsigned char>(table._pixelTable[row][col]->getBlue());
+			out << static_cast<char>(table._pixelTable[row][col]->getRed());
+			out << static_cast<char>(table._pixelTable[row][col]->getGreen());
+			out << static_cast<char>(table._pixelTable[row][col]->getBlue());
 		}
 		for (auto addBits = 0; addBits < fillBits; addBits++)
 			out << 0;
